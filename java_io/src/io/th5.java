@@ -22,7 +22,6 @@ public class th5 {
 		Thread th2 = new Thread(tb2);
 		
 		th1.start();
-		
 		th2.start();
 	}
 }
