@@ -10,7 +10,7 @@ FileWrite => output stream
 */
 
 //‪D:\java_io\list.txt
-
+//변경했습니다.
 public class io1 { //io는 무조건!!!!!! try- catch
 
 	public static void main(String[] args) {
