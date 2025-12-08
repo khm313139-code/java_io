@@ -2,6 +2,7 @@ package io;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /*
@@ -17,44 +18,36 @@ data.txt 파일을 열었을 경우 해당 댓글 내용이 저장 되어 있어
 */
 public class io4 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
 		io4_box ib = new io4_box();
 		ib.aaa();
-		ib.fw();
-
+		ib.bbb();
+		
 	}
-
 }
 
-
-class io4_box {
-	String url = "D:\\java_io\\data.txt";
-	String data[]=null;
-	
-	public void aaa(){
-		try {
-		Scanner sc = new Scanner(System.in);
+class io4_box{
+	String url = "d:\\java_io\\data.txt";
+	String data[] = null;
+	Scanner sc = new Scanner(System.in);
+	public void aaa() throws Exception{
+		
 		System.out.println("댓글 내용을 입력하세요: ");
 		String input = sc.nextLine();
-		
 		this.data = new String[1];
-		this.data[0] = input;
-		
-	}catch(Exception e){
-		System.out.println(e);
+		data[0]=input;
+		//System.out.println(Arrays.toString(data));
 	}
-		}
 	
-	public void fw() {
-	    try (FileWriter fw = new FileWriter(this.url, true)) { // append 모드
-	        for (int i = 0; i < this.data.length; i++) {
-	            fw.write(this.data[i] + "\n");
-	        }
-	        System.out.println("파일 저장 완료!");
-	    } catch (Exception e) {
-	        System.out.println(e);
-	    }
+	
+	public void bbb() throws Exception{
+		FileWriter fw = new FileWriter(this.url,true);
+		for(int i=0;i<this.data.length;i++) {
+			fw.write(this.data[i]+"\r\n");
+		}
+		fw.close();
 	}
+	
+	
 }
-
 

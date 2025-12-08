@@ -1,9 +1,13 @@
 package io;
 
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 /*
 응용문제 2
@@ -22,8 +26,9 @@ get(0).get(1) => 3D 모델링 인테리어 출력이 되어야함.
 */
 public class io5 {
 
-	public static void main(String[] args) throws IOException{
-		new io5_box().aaa();
+	public static void main(String[] args) throws Exception{
+		io5_box ib = new io5_box();
+		ib.aaa();
 
 	}
 
@@ -31,17 +36,31 @@ public class io5 {
 
 
 class io5_box{
-	String url = "\\java_io\\interior_data.dat";
 		
-	public void aaa() {
-	    try {
-	        List<String> data = Files.readAllLines(Paths.get(this.url));
-	        System.out.println(data);
-	    } catch (IOException e) {
-	        e.printStackTrace(); 
-	    }
+		public void aaa()throws Exception {
+			String url = "\\java_io\\interior_data.txt";
+			FileReader fr = new FileReader(url);
+			Scanner sc = new Scanner(fr);
+			ArrayList<ArrayList<String>> al = new ArrayList<ArrayList<String>>();
+			while(sc.hasNext()) {
+			String word = sc.nextLine();
+			String abc[] = word.split(",");
+			//System.out.println(Arrays.toString(abc));
+			
+			ArrayList<String> all = new ArrayList<String>();
+			for(int i=0; i<abc.length;i++) {
+				all.add(abc[i]);
+			}
+			al.add(all);
+			
+		}
+			//System.out.println(al);
+			
+			System.out.println(al.get(1).get(1));
+			
 	}
-} 
+}
+
 
 
 
