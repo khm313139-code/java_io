@@ -85,7 +85,7 @@ class io6_box{
 		*/
 		
 		//파일을 생성
-		Path data5 = Paths.get("c:\\java_io\\agree3.txt");
+		Path data5 = Paths.get("d:\\java_io\\agree3.txt");
 		//Files.createFile(data5);
 		Files.delete(data5); //파일 삭제
 		
