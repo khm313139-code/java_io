@@ -77,15 +77,15 @@ class io6_box{
 		
 		/* 잘라내기 형태로 이동
 		try {
-		Path data3 = Paths.get("c:\\io\\agree2.txt");
-		Path data4 = Paths.get("d:\\java_io\\agree2.txt");
+		Path data3 = Paths.get("d:\\java_io\\agree2.txt");
+		Path data4 = Paths.get("c:\\io\\agree2.txt");
 		Files.move(data3, data4);
 		}catch (Exception e) {
 			System.out.println(e);
 		*/
 		
 		//파일을 생성
-		Path data5 = Paths.get("d:\\java_io\\agree3.txt");
+		Path data5 = Paths.get("c:\\java_io\\agree3.txt");
 		//Files.createFile(data5);
 		Files.delete(data5); //파일 삭제
 		
