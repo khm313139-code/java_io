@@ -66,11 +66,33 @@ public class io6 {
 class io6_box{
 	public void abc() throws Exception {
 		//nio 형태로 디렉토리를 생성
-		Files.createDirectory(Paths.get("c:\\io"));
+		//Files.createDirectory(Paths.get("c:\\io"));
 		
 		//nio 형태로 path(interface)를 이용하여 파일 복사
+		/*
 		Path data1 = Paths.get("d:\\java_io\\list.txt");
 		Path data2 = Paths.get("c:\\io\\list.txt");
-		Files.copy(data1, data2);
+		Files.copy(data1, data2); //copy(원본 경로, 사본 경로)
+		*/
+		
+		/* 잘라내기 형태로 이동
+		try {
+		Path data3 = Paths.get("c:\\io\\agree2.txt");
+		Path data4 = Paths.get("d:\\java_io\\agree2.txt");
+		Files.move(data3, data4);
+		}catch (Exception e) {
+			System.out.println(e);
+		*/
+		
+		//파일을 생성
+		Path data5 = Paths.get("d:\\java_io\\agree3.txt");
+		//Files.createFile(data5);
+		Files.delete(data5); //파일 삭제
+		
+		
+		
+		
+		
+		
+		}
 	}
-}
