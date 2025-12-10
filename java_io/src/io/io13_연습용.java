@@ -25,10 +25,10 @@ vectors로 시작하는 파일은 => 펜션 이미지를 저장하는 디렉토�
 단, 저장 시 년월일 형태의 중복되지 않은 파일 명으로 다음과 같이 파일명을 설정하십시오.
 예시) hotel_20251209155506.jpg 중복안되게 해라 
 */
-public class io14_연습용 {
+public class io13_연습용 {
 
 	public static void main(String[] args) {
-		io14_box ib = new io14_box();
+		io13_box ib = new io13_box();
 		ib.aaa();
 		ib.bbb();
 
@@ -37,7 +37,7 @@ public class io14_연습용 {
 }
 
 
-class io14_box{
+class io13_box{
 	String url = "d:\\java_io\\java_io\\images";
 	//Scanner sc = new Scanner(System.in);
 	//String hotel1 = sc.nextLine();
