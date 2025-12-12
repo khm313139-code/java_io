@@ -2,10 +2,13 @@ package io;
 
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
+import java.nio.Buffer;
 import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -25,6 +28,76 @@ import java.util.Scanner;
 [결과]
 [hong,ef012355687cd0133,hong@nate.com,01012345678]
 */
+
+
+public class ex1 {
+    ex1_box eb = new ex1_box(); // 암호화 model
+    Scanner sc = null;
+    ArrayList<String> userinfo = null;
+    String url = "d:\\java_io\\java_io\\ship.txt";
+
+    public static void main(String[] args) {
+        ex1 program = new ex1(); // 객체 생성
+        program.member_ship();   // member_ship 메서드 호출
+    }
+
+    public void member_ship() {
+    	File f = new File(this.url);
+    	this.sc = new Scanner(System.in);
+    	this.userinfo = new ArrayList<String>();
+    	
+        try {
+        	FileReader fr = new FileReader(f);
+        	BufferedReader br = new BufferedReader(fr);
+        	
+        	
+        	String qc = "[회원가입]"; //실행이 되어 한칸 공백이 발생한다. - do~while의 단점
+        	int count = 0;
+        	do {
+        		
+        		System.out.println(qc);
+        		if(!qc.equals("[회원가입]")) {
+        			String userdata = this.sc.nextLine();
+        			if(count==1) { //패스워드 입력단계
+        				userdata  = this.eb.md5_encode(userdata);
+        				
+        			}
+        			this.userinfo.add(userdata);
+        		
+        			count++;
+        		
+        		}
+        		
+        	}while((qc=br.readLine())!= null); 
+        	System.out.println(userinfo);
+        	
+        	br.close();
+        	
+        	
+        	
+        	
+        	
+           
+        	
+        	
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 내 코드
 public class ex1 {
 
 	public static void main(String[] args) {
@@ -91,5 +164,4 @@ public class ex1 {
     }
 
 }
-
-	
+*/
